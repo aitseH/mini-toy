@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import Word from './model'
 import {mongodbUri} from './config'
 
 mongoose.connect(mongodbUri)
@@ -9,6 +10,8 @@ db.on('error', error => {
   console.error(error)
 })
 
-db.once('open', () => {
-  console.log('connect success')
+db.on('open', () => {
+  const wordtest = new Word({ chinese:'你好', japanese: 'こんにちは', english: 'hello'})
+
+  wordtest.save()
 })
