@@ -9,7 +9,7 @@ const date = execSync("date -v-7d '+%Y-%m-%d'").toString().replace(/\n/, '')
 
 const maps = {
   'github_trending': encodeURI(`https://api.github.com/search/repositories?q=created:>${date}&sort=starts&order=desc`),
-  'github_issues': encodeURI(`https://api.github.com/search/repositories?q=created:>${date}&sort=comments&order=desc`)
+  'github_issues': encodeURI(`https://api.github.com/search/issues?q=created:>${date}&sort=comments&order=desc`)
 
 }
 const keyMap = Object.keys(maps)
